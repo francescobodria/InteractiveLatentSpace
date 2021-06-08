@@ -17,3 +17,6 @@ Usage:<br>
         -r --reduced: option to reduce the number of points to visualise, if this option is not 
                       provided then all the test dataset is used for visualisation. 
                       For the titanic dataset a number less than 5000 is recommeded'
+
+
+![figure](/assets/figure.png)
