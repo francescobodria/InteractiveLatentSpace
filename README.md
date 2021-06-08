@@ -3,10 +3,10 @@
 Repository for the paper "Understanding Data by Exploring and Explaining the Latent Space"
 
 Requirements:<br>
-snikit-learn<br>
-pytorch<br>
-numpy<br>
-pandas<br>
+- scikit-learn<br>
+- pytorch<br>
+- numpy<br>
+- pandas<br>
 
 Usage:<br>
 
