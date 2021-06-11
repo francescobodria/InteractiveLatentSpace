@@ -7,6 +7,7 @@ Requirements:<br>
 - pytorch<br>
 - numpy<br>
 - pandas<br>
+- dash<br>
 
 Usage:<br>
 
