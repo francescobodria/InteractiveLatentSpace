@@ -8,16 +8,12 @@ Requirements:<br>
 - numpy<br>
 - pandas<br>
 - dash<br>
+- xgboost<br>
 
 Usage:<br>
 
-    app.py -d dataset_name -r number_of_points_to_visualise
+    python app.py
 
-        -d --dataset : name of the dataset to utilise, only "titanic" or "adult" are supported  
+![figure](/assets/slider_effect.jpeg)
 
-        -r --reduced: option to reduce the number of points to visualise, if this option is not 
-                      provided then all the test dataset is used for visualisation. 
-                      For the titanic dataset a number less than 5000 is recommeded'
-
-
-![figure](/assets/figure.png)
+![figure](/assets/clustering.jpg)
