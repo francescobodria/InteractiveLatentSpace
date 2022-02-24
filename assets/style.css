@@ -58,6 +58,7 @@ h5 {
   letter-spacing: -0.05rem;
   margin-bottom: 0.6rem;
   margin-top: 0.6rem;
+  text-align: left;
 }
 h6 {
   font-size: 1rem;
@@ -78,9 +79,27 @@ p {
     display:flex;
 }
 
-.main_page{
+.graphs{
     display:flex;
-    flex-direction: row;
+}
+
+.left_plot{
+    width:49%;
+    padding:10px;
+}
+
+.right_plot{
+    width:49%;
+    padding:10px;
+}
+
+.violin-graph{
+    padding:10px;
+}
+
+.shap_page{
+    display:flex;
+    flex-direction:row;
 }
 
     .index{
@@ -93,31 +112,28 @@ p {
         padding:10px;
         justify-content: center;
     }
-
+        
+        .variable{
+        }
         .variable_name{
-            width:35%
+            width:35%;
         }
 
         .slider{
-            padding-left: 10px;
-            padding-right:10px;
-            padding-top:17px;
             width:45%;
         }
         
         .slider_value{
+            justify-content:center;
             width:10%;
             text-align: center;
             padding-left:5px;
             font-size: 1rem;
-            padding-top: 10px;
         }
 
     .graph{
+        padding-top:60px;
         width:50%;
-        padding:10px;
-        justify-content: center;
-        align-items: center
     }
 
 /*@media screen and (min-width: 400px){
