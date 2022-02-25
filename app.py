@@ -57,10 +57,12 @@ c=pd.read_csv('./data/Titanic/titanic_test_labels.csv')
 test_data_with_labels = c.copy()
 for i, name in enumerate(test_data_with_labels['name']):
     if '"' in name:
-        test_data_with_labels['name'][i] = re.sub('"', '', name)
+        #test_data_with_labels['name'][i] = re.sub('"', '', name)
+        test_data_with_labels.loc[i,'name'] = re.sub('"', '', name)
 for i, name in enumerate(tit_test['Name']):
     if '"' in name:
-        tit_test['Name'][i] = re.sub('"', '', name)
+        #tit_test['Name'][i] = re.sub('"', '', name)
+        tit_test.loc[i,'Name'] = re.sub('"', '', name)
 survived = []
 for name in tit_test['Name']:
     survived.append(int(test_data_with_labels.loc[test_data_with_labels['name'] == name]['survived'].values[-1]))
@@ -68,7 +70,6 @@ Y_test = pd.Series(survived,index=X_test_df.index)
 
 Y_train = Y_train.to_numpy()
 Y_test = Y_test.to_numpy()
-
 
 # Black Box Loading
 
