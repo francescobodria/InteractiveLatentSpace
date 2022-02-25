@@ -3,21 +3,19 @@
 Repository for the paper "Understanding Data by Exploring and Explaining the Latent Space"
 
 Requirements:<br>
-- scikit-learn<br>
-- pytorch<br>
-- numpy<br>
-- pandas<br>
-- dash<br>
+- scikit-learn==0.24.2<br>
+- pytorch==1.10.0<br>
+- numpy==1.19.2<br>
+- pandas==1.3.5<br>
+- plotly==4.14.3<br>
+- dash==2.0.0<br>
+- xgboost==1.3.3<br>
+- shap==0.39.0<br>
 
 Usage:<br>
 
-    app.py -d dataset_name -r number_of_points_to_visualise
+    python app.py
 
-        -d --dataset : name of the dataset to utilise, only "titanic" or "adult" are supported  
+![figure](/assets/slider_effect.jpeg)
 
-        -r --reduced: option to reduce the number of points to visualise, if this option is not 
-                      provided then all the test dataset is used for visualisation. 
-                      For the titanic dataset a number less than 5000 is recommeded'
-
-
-![figure](/assets/figure.png)
+![figure](/assets/clustering.jpg)
