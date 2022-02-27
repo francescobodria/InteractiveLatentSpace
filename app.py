@@ -6,6 +6,8 @@ import re
 import numpy as np
 import pandas as pd
 
+from fastapi import FastAPI
+from starlette.middleware.wsgi import WSGIMiddleware
 # Data Loading
 
 #https://www.kaggle.com/c/titanic/data
@@ -856,14 +858,21 @@ def compute_violin(selectedData_left, selectedData_right):
 # In[23]:
 
 
+server = FastAPI()
+server.mount("/", WSGIMiddleware(app.server))
+
+
 # run the app
-app.run_server(port=8090, 
+
+if __name__ ==  "__main__":
+   app.run_server(port=8090, 
                dev_tools_ui=True, 
                debug=True,
                dev_tools_hot_reload=True,
                threaded=True,
                #host='127.0.0.1:2595'
               )
+
 
 
 
