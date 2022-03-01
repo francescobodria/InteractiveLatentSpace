@@ -1,0 +1,13 @@
+# how to make the service accesible?
+# cp *.service ~/.config/systemd/
+# systemctl --user start InteractiveLatentSpace.service
+[Unit]
+Description=FastAPI interface for the Interactive Exploration of Latent Space (Francesco Bodria)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/sax/InteractiveLatentSpace
+ExecStart=/home/sax/miniconda3/envs/ai4eu/bin/uvicorn app:server --host 0.0.0.0 --port 9993 --reload --workers 4
+[Install]
+WantedBy=default.target
