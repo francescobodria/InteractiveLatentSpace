@@ -1,19 +1,19 @@
 body {
     background-color: #f2f2f2;
-    margin: 2%;
-    font-size: 1.5em;
-    line-height: 1.6;
-    font-weight: 300;
-    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: rgb(50, 50, 50);
+    /*margin: 2%;*/
+    /*font-size: 1.5em;*/
+    /*line-height: 1.6;*/
+    /*font-weight: 300;*/
+    /*font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    /*color: rgb(50, 50, 50);*/
 }
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-}
+/*h1, h2, h3, h4, h5, h6 {*/
+/*    text-align: center;*/
+/*}*/
 
 h1,
 h2,
@@ -68,9 +68,9 @@ h6 {
   margin-top: 0.75rem;
 }
 
-p {
-  margin-top: 0;
-}
+/*p {*/
+/*  margin-top: 0;*/
+/*}*/
 
 /* FlexBoxes
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -94,7 +94,8 @@ p {
 }
 
 .violin-graph{
-    padding:10px;
+    margin-top:30px;
+    margin-bottom:50px;
 }
 
 .shap_page{
@@ -108,34 +109,77 @@ p {
     }
 
     .inputs{
-        width:50%;
+        /*width:50%;*/
         padding:10px;
+        margin-right: 20px;
         justify-content: center;
     }
         
-        .variable{
-        }
-        .variable_name{
-            width:35%;
-        }
-
-        .slider{
-            width:45%;
-        }
-        
-        .slider_value{
-            justify-content:center;
-            width:10%;
-            text-align: center;
-            padding-left:5px;
-            font-size: 1rem;
-        }
-
-    .graph{
-        padding-top:60px;
-        width:50%;
+    .variable{
+        border-top: solid 0.5px grey;
+        padding: 2px;
+    }
+    .variable_name{
+        width:35%;
     }
 
+    .slider{
+        width:45%;
+    }
+    .rc-slider{
+        margin-top: 10px;
+    }
+    .rc-slider-rail{
+        background-color: grey;
+        height: 2px;
+    }
+    .rc-slider-rail-active{
+        background-color: black;
+    }
+    .rc-slider-dot-active {
+        border-color: black;
+    }
+
+     .rc-slider-dot {
+        border-color: grey;
+    }
+
+
+    .rc-slider-handle {
+        border-color: black !important;
+    }
+    .rc-slider-track {
+        height: 3px !important;
+        background-color: black !important;
+}
+
+    .slider_value{
+        justify-content:center;
+        width:10%;
+        text-align: center;
+        padding-left:5px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .graph{
+        margin-top:52px;
+        /*padding-left:50px;*/
+        /*width:50%;*/
+    }
+
+
+    .two-columns {
+    column-count: 2;
+    column-gap: 2rem;
+    }
+
+    .table-header {
+        color: black;
+        font-size: medium;
+        font-weight: bold;
+
+    }
 /*@media screen and (min-width: 400px){
 /*    .input_output{
 /*        flex-direction: initial;
