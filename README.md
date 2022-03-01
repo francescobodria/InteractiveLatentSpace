@@ -18,4 +18,4 @@ Usage:<br>
 
 ![figure](/assets/slider_effect.jpeg)
 
-![figure](/assets/clustering.jpg)
+![figure](/assets/clustering.jpeg)

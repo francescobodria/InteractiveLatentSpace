@@ -596,7 +596,7 @@ app.layout = html.Div([
                     ],
                 id = 'index',
                 className = 'index')]+[
-                # cycle for for the 10 sliders
+                # loop for the 10 sliders
                  html.Div([
                     html.Div([
                         html.H5(str(columns[indices[i]])+' : ', id = 'slider_variable_name_'+str(i))
