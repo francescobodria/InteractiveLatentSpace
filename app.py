@@ -580,9 +580,8 @@ def select_ticks(m, M, e):
                          }.items()))
     return ticks
 
-
-app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],
-                external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__,url_base_pathname='/LSE/', meta_tags=[{"name": "viewport", "content": "width=device-width"}], 
+  external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 jumbotron = html.Div(
     [
