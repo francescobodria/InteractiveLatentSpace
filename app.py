@@ -203,19 +203,13 @@ shap_fig.add_trace(go.Scatter(x=z_train[:, 0].numpy(),
 shap_fig.add_trace(go.Scatter(x=[0], y=[0], mode='markers', name='pointer', showlegend=False,
                               marker=dict(
                                   size=30,
-                                  symbol='x',
-                                  color='lightgrey  ',
-                                  line=dict(width=1,
+                                  symbol='circle-cross',
+                                  color='rgba(255,255,255,0.3)',
+                                  line=dict(width=1.5,
                                             color='black')
                               )))
 
-shap_fig.add_trace(go.Scatter(x=[0], y=[0], mode='markers', name='expected_value', showlegend=False,
-                              marker=dict(
-                                  size=30,
-                                  symbol='triangle-up',
-                                  color='indigo',  # '#ffdb4d',  # '#a834e7'
-                                  line=dict(width=1,
-                                            color='white'))))
+
 
 # Create the annotation vectors with 0 that will be updated in the code later
 names = ['vector_0', 'vector_1', 'vector_2', 'vector_3', 'vector_4', 'vector_5', 'vector_6', 'vector_7', 'vector_8',
@@ -237,7 +231,7 @@ annotations = [
                       arrowside='start',
                       arrowhead=2,  # type od head [0,8]
                       arrowsize=1,  # head dimension
-                      arrowwidth=2,  # arrow dimension
+                      arrowwidth=1.5,  # arrow dimension
                       arrowcolor="#000000",
                       name=name,
                       text='  ',
@@ -295,12 +289,13 @@ shap_fig.update_layout(
 shap_fig.update_xaxes(
     range=[x_min, x_max],
     scaleanchor="y",
-    scaleratio=1
+    scaleratio=1,
+    # zeroline=True, zerolinewidth=0.5, zerolinecolor='black'
 )
 
 shap_fig.update_yaxes(
     range=[y_min, y_max],
-
+    # zeroline=True, zerolinewidth=0.5, zerolinecolor='black'
 );
 
 # add the points to the clustering plots
@@ -459,6 +454,8 @@ for i in range(len(slider_names)):
         scaleratio=1
     )
 
+
+
 # SHAP values computation part
 import shap
 
@@ -580,8 +577,9 @@ def select_ticks(m, M, e):
                          }.items()))
     return ticks
 
-app = dash.Dash(__name__,url_base_pathname='/LSE/', meta_tags=[{"name": "viewport", "content": "width=device-width"}], 
-  external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+app = dash.Dash(__name__, url_base_pathname='/LSE/', meta_tags=[{"name": "viewport", "content": "width=device-width"}],
+                external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 jumbotron = html.Div(
     [
@@ -687,7 +685,7 @@ clustering_title = dbc.Container(
                                  of the points belonging to the cluster highlighted in the left figure, 
                                  while the right one are the distributions of the points selected on the right 
                                  scatter plot. The features are sorted in descending order from the most separated 
-                                 distributions on the right to the least separated one to the left.''' ,
+                                 distributions on the right to the least separated one to the left.''',
                                 className='two-columns')],
                             md=12)
                     )
@@ -710,7 +708,7 @@ app.layout = html.Div([
                         # title above the sliders
                         [html.Div([
                             html.Div([
-                                html.H5('Name', className="table-header")
+                                html.H5('Features ordered by relevance', className="table-header")
                             ],
                                 style={'width': '35%'}),
                             html.Div([
@@ -864,6 +862,27 @@ def update_output(value0, value1, value2, value3, value4, value5, value6, value7
         lambda trace: trace.update(x=[z[0]], y=[z[1]]) if trace.name == "pointer" else (),
     )
     s = [exp_x, exp_y]
+    s_zero = [exp_x, exp_y]
+
+    shap_fig.add_shape(type="line",
+                       x0=-20, y0=s_zero[1], x1=20, y1=s_zero[1],
+                       line=dict(
+                           color="black",
+                           width=1,
+                           dash="dashdot",
+                       )
+                       )
+
+    shap_fig.add_shape(type="line",
+                       x0=s_zero[0], y0=20, x1=s_zero[0], y1=-20,
+                       line=dict(
+                           color="black",
+                           width=1,
+                           dash="dashdot",
+                       )
+                       )
+
+
     for i in range(len(v)):
         # start
         annotations[i]['x'] = s[0]
