@@ -1,0 +1,19 @@
+name: ai4eu
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - bitarray
+  - deap
+  - uvicorn
+  - xgboost
+  - pytorch
+  - plotly
+  - shap
+  - dcc
+prefix: /home/sax/miniconda3/envs/ai4eu
+
