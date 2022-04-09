@@ -241,7 +241,7 @@ annotations = [
                           size=1,
                           color="#ffffff"
                       ),
-                      bgcolor='white'
+                      bgcolor=None
                   ) for name in names] + [
                   go.layout.Annotation(
                       # start
