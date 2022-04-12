@@ -8,7 +8,7 @@ Requirements:<br>
 
 Live Demo:
 
-    <https://kdd.isti.cnr.it/LSE/>
+    https://kdd.isti.cnr.it/LSE/
 
 Usage:<br>
 
