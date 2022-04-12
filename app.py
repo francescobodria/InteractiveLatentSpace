@@ -338,7 +338,7 @@ clustering_fig.update_yaxes(
 # add the data to the violin plot
 violin_plot.add_trace(go.Violin(name='left',
                                 side='negative',
-                                line_color='purple',
+                                line_color='DarkGreen',
                                 line_width=0.5,
                                 bandwidth=0.25,
                                 points=False)
@@ -867,8 +867,8 @@ def update_output(value0, value1, value2, value3, value4, value5, value6, value7
     shap_fig.add_shape(type="line",
                        x0=-20, y0=s_zero[1], x1=20, y1=s_zero[1],
                        line=dict(
-                           color="black",
-                           width=1,
+                           color="#404040",
+                           width=1.5,
                            dash="dashdot",
                        )
                        )
@@ -876,8 +876,8 @@ def update_output(value0, value1, value2, value3, value4, value5, value6, value7
     shap_fig.add_shape(type="line",
                        x0=s_zero[0], y0=20, x1=s_zero[0], y1=-20,
                        line=dict(
-                           color="black",
-                           width=1,
+                           color="#404040",
+                           width=1.5,
                            dash="dashdot",
                        )
                        )
