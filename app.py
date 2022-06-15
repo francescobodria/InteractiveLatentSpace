@@ -586,9 +586,9 @@ jumbotron = html.Div(
         dbc.Row(
             [
                 dbc.Col([
+                    html.H5("Francesco Bodria, Salvatore Rinzivillo, Daniele Fadda, Riccardo Guidotti, Fosca Giannotti, Dino Pedreschi"),
                     html.H2("Explaining Black Box with visual exploration of Latent Space"),
-                    # html.H3("Qui ci starebbe proprio bene un sottotitolo"),
-                    html.Hr(className="mt-2 mb-4"),
+                    html.Hr(className="mt-1 mb-4"),
                     html.P(
                         '''Autoencoders are a powerful yet opaque feature reduction technique, on top of which we propose a novel way for the joint visual exploration of both latent and real space.
 By interactively exploiting the mapping between latent and real features, it is possible to unveil the meaning of latent features while providing deeper insight into the original variables.
@@ -687,6 +687,27 @@ clustering_title = dbc.Container(
                                  scatter plot. The features are sorted in descending order from the most separated 
                                  distributions on the right to the least separated one to the left.''',
                                 className='two-columns')],
+                            md=12)
+                    )
+                ]),
+            md=12,
+            # className="my-3 p-3 bg-light border rounded-3"
+        ),
+        className="align-items-md-stretch",
+    )
+)
+
+footer = dbc.Container(
+    dbc.Row(
+        dbc.Col(
+            html.Div(
+                [
+                    dbc.Row(
+                        dbc.Col([
+                            html.Hr(),
+                            html.P(
+                                '''This work has been partially supported by the European Community Horizon 2020 programme under the funding schemes: G.A. 834756 XAI, G.A. 871042 SoBigData++, G.A. 952026 Humane AI Net, G.A. 825619 AI4EU.''',
+                                className='', style={'font-style': 'italic'})],
                             md=12)
                     )
                 ]),
@@ -820,7 +841,8 @@ app.layout = html.Div([
             )
         ]
         )
-    ], fluid=False)
+    ], fluid=False),
+    footer
 ],
     id='main_body',
     className='main_body')
